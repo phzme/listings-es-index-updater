@@ -1,6 +1,6 @@
 # LISTINGS-INDEX-UPDATER
 
-This project synchronizes listing data between a PostgreSQL database and Elasticsearch, ensuring consistency between the two data stores.
+This project synchronizes listing data between a PostgreSQL database and Elasticsearch, ensuring consistency between the two data stores. And makes possible to do vector image search on the entire listings database
 
 ![Screenshot 2024-10-14 011401](https://github.com/user-attachments/assets/3ef9f184-2307-45a2-a4d8-01eec3210566)
 
