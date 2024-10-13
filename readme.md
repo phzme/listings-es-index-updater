@@ -52,12 +52,32 @@ LISTINGS-INDEX-UPDATER/
    pip install -r requirements.txt
    ```
 
-   Note: If `requirements.txt` is missing, generate it using:
+4. Configure the `.env` file:
+   Create a `.env` file in the project root with the following structure:
+
    ```
-   pip freeze > requirements.txt
+   # Elasticsearch configuration
+   ES_INDEX_NAME=<your-elasticsearch-index-name>
+   ES_URL=<your-elasticsearch-url>
+   ES_USER=<your-elasticsearch-username>
+   ES_PORT=<your-elasticsearch-port>
+   ES_PASSWORD=<your-elasticsearch-password>
+   ES_PEM_PATH=<path-to-your-pem-file>
+
+   # PostgreSQL configuration
+   DB_HOST=<your-postgresql-host>
+   DB_NAME=<your-database-name>
+   DB_USER=<your-database-username>
+   DB_PASSWORD=<your-database-password>
+   DB_PORT=<your-database-port>
+   DB_SSLMODE=<your-ssl-mode>
+
+   # Table names
+   LISTINGS_TABLE=<your-listings-table-name>
+   EMBEDDINGS_TABLE=<your-embeddings-table-name>
    ```
 
-4. Ensure your `.env` file is properly configured with necessary environment variables.
+   Replace the placeholder values with your actual configuration details.
 
 ## Usage
 
@@ -72,3 +92,7 @@ This script will:
 2. Fetch listing IDs from both sources.
 3. Compare the IDs to find discrepancies.
 4. Update Elasticsearch with any missing listings from PostgreSQL.
+
+## Security Note
+
+Ensure that your `.env` file is included in your `.gitignore` to prevent sensitive information from being committed to version control.
