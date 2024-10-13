@@ -92,7 +92,3 @@ This script will:
 2. Fetch listing IDs from both sources.
 3. Compare the IDs to find discrepancies.
 4. Update Elasticsearch with any missing listings from PostgreSQL.
-
-## Security Note
-
-Ensure that your `.env` file is included in your `.gitignore` to prevent sensitive information from being committed to version control.
