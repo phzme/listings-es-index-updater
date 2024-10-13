@@ -1,0 +1,51 @@
+# Virtual Environment
+venv/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment variables
+.env
+
+# Certificate files
+*.pem
+
+# IDE specific files
+.vscode/
+.idea/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Database files
+*.sqlite3
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+
+# CSV files (if you don't want to track data files)
+*.csv
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Python package files
+*.egg
+*.egg-info/
+dist/
+build/
+eggs/
+parts/
+var/
+sdist/
+develop-eggs/
+.installed.cfg
