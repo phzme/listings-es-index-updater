@@ -2,6 +2,7 @@ import os
 import psycopg2
 from dotenv import load_dotenv
 import pandas as pd
+from sqlalchemy import create_engine
 
 # Load environment variables from .env file
 load_dotenv()
@@ -71,6 +72,24 @@ def fetch_listings_data(conn, id_batch, listings_table="listings", embeddings_ta
     except (Exception, psycopg2.Error) as error:
         print("Error while fetching listings data:", error)
         return None
+
+
+# def fetch_listings_data(conn, id_batch, listings_table, embeddings_table):
+#     """Fetch listings data using SQLAlchemy"""
+#     engine = create_engine(
+#         f'postgresql://{os.getenv("DB_USER")}:{os.getenv("DB_PASSWORD")}@'
+#         f'{os.getenv("DB_HOST")}:{os.getenv("DB_PORT")}/{os.getenv("DB_NAME")}',
+#         connect_args={'sslmode': os.getenv('DB_SSLMODE', 'require')}
+#     )
+    
+#     query = f"""
+#         SELECT l.*, le.front_image_embeddings
+#         FROM {listings_table} l
+#         JOIN {embeddings_table} le ON l.id = le.listings_id
+#         WHERE l.id = ANY(%s)
+#     """
+    
+#     return pd.read_sql_query(query, engine, params=[id_batch])
 
 if __name__ == "__main__":
     conn = connect_to_postgres()
